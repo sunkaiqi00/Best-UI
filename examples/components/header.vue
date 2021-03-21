@@ -24,7 +24,7 @@
       <div class="link">
         <router-link :to="{name: 'start'}" class="active">指南</router-link>
         <router-link :to="{name: 'button'}" class="active">组件</router-link>
-        <a href="https://github.com/wangbin3162/bin-ui" class="github" target="_blank">GitHub</a>
+        <a href="https://github.com/sunkaiqi00/Best-UI" class="github" target="_blank">GitHub</a>
       </div>
     </div>
   </header>
