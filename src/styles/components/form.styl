@@ -1,0 +1,142 @@
+.bin-form {
+  &--large {
+    .bin-form-item-label {
+      height: $large-height;
+    }
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        line-height: $large-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 16px 0;
+      }
+    }
+  }
+  &--small {
+    .bin-form-item-label {
+      height: $small-height;
+    }
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        line-height: $small-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 12px 0;
+      }
+    }
+  }
+  &--mini {
+    .bin-form-item-label {
+      height: $mini-height;
+    }
+
+    .bin-form-item-content {
+      .bin-checkbox-group, .bin-radio-group {
+        line-height: $mini-height - 2;
+      }
+      .bin-slider-wrap {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+//item
+.bin-form-item {
+  display: flex;
+  margin-bottom: 22px;
+  vertical-align: top;
+  &-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: $base-font-size;
+    color: $color-text-primary;
+    line-height: $base-line-height;
+    height: $default-height;
+    box-sizing: border-box;
+    &::after {
+      content: ':';
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+    }
+  }
+  &-content {
+    position: relative;
+    line-height: $base-line-height;
+    font-size: $base-font-size;
+    .bin-checkbox-group, .bin-radio-group {
+      line-height: $default-height - 2;
+    }
+    .bin-slider {
+      margin: 0 4px;
+    }
+  }
+
+}
+
+.bin-form-item-required {
+  .bin-form-item-label:before {
+    content: "*";
+    display: inline-block;
+    margin-right: 4px;
+    line-height: $base-line-height;
+    font-family: SimSun;
+    font-size: $base-font-size;
+    color: $color-danger;
+  }
+}
+.bin-form-item-error > .bin-form-item-content .bin-input {
+  border: 1px solid $color-danger;
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px $color-input-error-shadow;
+  }
+}
+.bin-form-item-error > .bin-form-item-content .bin-date-picker-focused input {
+  border: 1px solid $color-danger;
+  box-shadow: none;
+}
+
+.bin-form-item-error-tip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12.5px;
+  line-height: $base-line-height;
+  color: $color-danger;
+}
+
+.bin-form-inline .bin-form-item {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.bin-form-label-left .bin-form-item-label {
+  justify-content: flex-start;
+}
+.bin-form-label-top {
+  .bin-form-item {
+    display: block;
+    .bin-form-item-label {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    .bin-form-item-label-empty {
+      display: none;
+    }
+    .bin-form-item-content {
+      flex: none;
+      width: 100%;
+    }
+  }
+}
+
+.bin-form-item-error {
+  .bin-date-picker .bin-input-suffix i {
+    color: $color-danger;
+  }
+}
+.bin-form-item-error > .bin-form-item-content .bin-ace-editor {
+  border-color: $color-danger !important;
+}

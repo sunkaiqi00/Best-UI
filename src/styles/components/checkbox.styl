@@ -1,0 +1,154 @@
+.bin-checkbox-wrapper {
+  cursor: pointer;
+  font-size: $base-font-size;
+  display: inline-block;
+  margin-right: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  line-height: $base-line-height;
+  user-select: none;
+}
+
+.bin-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  &-inner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: $border-base;
+    border-radius: $border-base-radius;
+    background-color: $color-white;
+    transition: border-color $animation-duration-base ease-in-out, background-color $animation-duration-base ease-in-out;
+    &:after {
+      content: "";
+      position: absolute;
+      display: table;
+      width: 4.714px;
+      height: 9.142px;
+      top: 6px;
+      left: 3px;
+      border: 2px solid #fff;
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg) scale(1) translate(-50%, -50%);
+      transition: all $animation-duration-base ease-in-out;
+      border-top: 0;
+      border-left: 0;
+    }
+  }
+  &-checked {
+    .bin-checkbox-inner {
+      border-color: $color-primary;
+      background-color: $color-primary;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $color-primary;
+      border-radius: $border-base-radius;
+      animation: checkEffect $animation-duration-slow ease-in-out;
+      animation-fill-mode: backwards;
+      content: '';
+    }
+  }
+  &:hover {
+    .bin-checkbox-inner {
+      border-color: $color-primary-light1;
+    }
+  }
+  &-input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.bin-checkbox-group {
+  font-size: 14px;
+}
+.bin-checkbox-group-item, .bin-switch {
+  display: inline-block;
+}
+.bin-checkbox-wrapper-disabled {
+  cursor: not-allowed;
+}
+.bin-checkbox-disabled {
+  cursor: not-allowed;
+}
+.bin-checkbox-input[disabled] {
+  cursor: not-allowed;
+}
+.bin-checkbox-disabled.bin-checkbox-checked .bin-checkbox-inner {
+  background-color: #f3f3f3;
+  border-color: #dcdee2;
+}
+.bin-checkbox-disabled.bin-checkbox-checked .bin-checkbox-inner:after {
+  -webkit-animation-name: none;
+  animation-name: none;
+  border-color: #ccc;
+}
+.bin-checkbox-disabled.bin-checkbox-checked:after {
+  border-color: #dcdee2;
+}
+.bin-checkbox + span, .bin-checkbox-wrapper + span {
+  padding: 0 8px;
+  vertical-align: middle;
+}
+.bin-checkbox-disabled + span {
+  color: #ccc;
+  cursor: not-allowed;
+}
+.bin-checkbox-disabled .bin-checkbox-inner:after {
+  -webkit-animation-name: none;
+  animation-name: none;
+  border-color: #f3f3f3;
+}
+.bin-checkbox-disabled .bin-checkbox-inner {
+  border-color: #dcdee2;
+  background-color: #f3f3f3;
+}
+.bin-checkbox-indeterminate .bin-checkbox-inner {
+}
+.bin-checkbox-indeterminate .bin-checkbox-inner:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: scale(1) translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: none;
+  background-color: $color-primary;
+}
+
+
+@keyframes checkEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
