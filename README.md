@@ -1,10 +1,10 @@
-# bin-ui
+# best-ui
 
 一套基于 vue2.6 的 UI 组件库，提供常用组件和公共样式、函数
 
 ## Docs
 
-[document](https://wangbin3162.gitee.io/bin-ui/)
+[document](https://sunkaiqi00.github.io/best-ui-document/)
 
 ## 安装
 
