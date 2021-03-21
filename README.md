@@ -4,7 +4,7 @@
 
 ## Docs
 
-[document](https://sunkaiqi00.github.io/best-ui-document/)
+[document](https://sunkaiqi00.github.io/best-ui-doc/)
 
 ## 安装
 
